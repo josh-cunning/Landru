@@ -387,7 +387,7 @@ def url(url_rule):
     must take a third argument ``match``, which is the regular expression match
     of the URL. This should be used rather than the matching in trigger, in
     order to support e.g. the ``.title`` command.
-    """
+
     def actual_decorator(function):
         @functools.wraps(function)
         def helper(bot, trigger, match=None):
@@ -396,7 +396,7 @@ def url(url_rule):
         helper.url_regex = re.compile(url_rule)
         return helper
     return actual_decorator
-
+    """
 
 class example(object):
     """Decorate a function with an example.
