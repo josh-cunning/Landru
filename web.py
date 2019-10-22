@@ -5,7 +5,7 @@
 The web class contains essential web-related functions for interaction with web
 applications or websites in your modules.  It supports HTTP GET, HTTP POST and
 HTTP HEAD.
-"""
+
 # Copyright © 2008, Sean B. Palmer, inamidst.com
 # Copyright © 2009, Michael Yanovich <yanovich.1@osu.edu>
 # Copyright © 2012, Dimitri Molenaars, Tyrope.nl.
