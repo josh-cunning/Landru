@@ -1,0 +1,18 @@
+[UNIT]
+Description=Sopel IRC bot
+Documentation=http://sopel.chat/
+After=network.target
+
+[Service]
+Type=simple
+User=sopel
+ExecStart=/home/sopel/sopel -c /home/sopel/.sopel/default.cfg
+Restart=on-failure
+RestartPreventExitStatus=2
+RestartSec=30
+Environment=LC_ALL=en_US.UTF-8
+
+[Install]
+WantedBy=multi-user.target
+
+
