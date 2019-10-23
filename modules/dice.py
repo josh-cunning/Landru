@@ -17,9 +17,6 @@ import sopel.module
 from sopel.tools.calculation import eval_equation
 
 
-
-
-
 @sopel.module.commands("dice")
 def roll(bot, trigger):
     bot.say("Get your only damn dice")

@@ -3,13 +3,11 @@ from __future__ import unicode_literals, absolute_import, print_function, divisi
 import random
 import re
 import operator
-
 import sopel.module
 import operator
-
 import sopel.module
 from sopel.tools.calculation import eval_equation
-from ramchips *
+from ramchips import *
 
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
