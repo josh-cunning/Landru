@@ -8,8 +8,9 @@ import sopel.module
 from sopel.tools.calculation import eval_equation
 
 @sopel.module.commands("ram")
-def qoutes(bot, trigger):
-    answer= ["More RAM is better","Please insert 5 quarts of blood for moar ram", "It's my ram and you can't have any"," I checked and we don't care what you want"]
-    txt = randint(1, 3)
-    quote = anwser(txt)
+def moarram(bot, trigger):
+    #answer = ["More RAM is better","Please insert 5 quarts of blood for moar ram", "It's my ram and you can't have any"," I checked and we don't care what you want"]
+    # txt = randint(1, 3)
+    # quote = anwser(txt)
+    txt = "Get your own dam ram"
     bot.say(txt)
