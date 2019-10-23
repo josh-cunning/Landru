@@ -5,7 +5,7 @@ import re
 import operator
 
 import sopel.module
-from sopel.tools.calculation import eval_equation
+# from sopel.tools.calculation import eval_equation
 
 @sopel.module.commands("landru")
 def qoutes(bot, trigger):
