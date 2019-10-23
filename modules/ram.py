@@ -9,12 +9,19 @@ import operator
 
 import sopel.module
 from sopel.tools.calculation import eval_equation
+from ramchips *
 
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
-    answer = ["More RAM is better", "Please insert 5 quarts of blood for moar ram", "It's my ram and you can't have any"," I checked and we don't care what you want"]
-    max = len(answer)
-    txt = random.randint(0, max)
-    bot.say(str(txt))
-    quote = answer[txt]    
-    bot.say(quote)
+    coms = trigger.group(2)
+    bot.say(str(coms))
+    nick = trigger.nick
+    if coms == 'add':
+        amount = 1
+        addram(bot,nick,amount)
+        bot.say(nick + " gets " + str(amount) + " ramchips" )
+    elif coms == 'balance':
+        bl = getbalance(bot,nick)
+        bot.say(str(bl))
+    else:
+        bot.say("Get your own ram")
