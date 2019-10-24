@@ -16,12 +16,13 @@ from ramchips import *
 
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
-
+    coms =''
     triggerargsarray = spicemanip.main(trigger, 'create')
     maincom = spicemanip.main(triggerargsarray, 1).lower()[1:]
     triggerargsarray = spicemanip.main(triggerargsarray, '2+', "list")
-    bot.say(str(maincom) + " " + str(triggerargsarray))
-    #bot.say(str(coms))
+    bot.say(str(triggerargsarray))
+    coms = spicemanip.main(triggerargsarray,1)
+    bot.say(str(coms))
     nick = trigger.nick
     if coms == 'add':
         amount = 1
