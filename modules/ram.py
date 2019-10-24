@@ -6,14 +6,24 @@ import operator
 import sopel.module
 import os
 import sys
+import spicemanip
+
 moduledir = os.path.dirname(__file__)
 shareddir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(shareddir)
 from ramchips import *
 
+
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
-    coms = trigger.group(2)
+    if not trigger.group(2)
+        return bot.reply("Get your own ram")
+    cmd = [trigger.group(2)]
+    for delim in '|\\/, ' :
+        cmd = trigger.group(2).split(delim)
+        if len(choices) > 1:
+            break
+        cmd = [cmd.strip() for cmd in cmd]
     #bot.say(str(coms))
     nick = trigger.nick
     if coms == 'add':
