@@ -7,7 +7,6 @@ import sopel.module
 import os
 import sys
 
-
 from .ramchips import *
 
 @sopel.module.commands("ram")
