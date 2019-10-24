@@ -7,7 +7,7 @@ import sopel.module
 import os
 import sys
 
-#from sopel.tools.calculation import eval_equation
+
 from .ramchips import *
 
 @sopel.module.commands("ram")
