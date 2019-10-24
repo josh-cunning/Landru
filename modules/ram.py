@@ -7,7 +7,7 @@ import sopel.module
 import os
 import sys
 
-from .ramchips import *
+from ramchips import *
 
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
