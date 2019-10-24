@@ -8,7 +8,7 @@ import os
 import sys
 
 #from sopel.tools.calculation import eval_equation
-from sopel.module.ramchips import *
+from sopel.tools.ramchips import *
 
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
