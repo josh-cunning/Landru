@@ -16,14 +16,7 @@ from ramchips import *
 
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
-    if not trigger.group(2)
-        return bot.reply("Get your own ram")
-    cmd = [trigger.group(2)]
-    for delim in '|\\/, ' :
-        cmd = trigger.group(2).split(delim)
-        if len(choices) > 1:
-            break
-        cmd = [cmd.strip() for cmd in cmd]
+
     #bot.say(str(coms))
     nick = trigger.nick
     if coms == 'add':
