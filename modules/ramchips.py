@@ -9,7 +9,6 @@ import operator
 
 import sopel.module
 
-
 def getbalance(bot,nick):
     bl=0
     bl = bot.db.get_nick_value(nick, 'rambank')
