@@ -154,7 +154,7 @@ class Bot(asynchat.async_chat):
 
             # Ends the message with CR-LF
             temp = temp + '\r\n'
-
+            
             # Log and output the message
             self.log_raw(temp, '>>')
             self.send(temp.encode('utf-8'))
