@@ -8,7 +8,7 @@ import sopel.module
 import operator
 
 import sopel.module
-from sopel.tools.ramchips import *
+from sopel.tools.calculation import eval_equation
 
 def getbalance(bot,nick):
     bl=0

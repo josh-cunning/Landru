@@ -7,13 +7,8 @@ import sopel.module
 import os
 import sys
 
-# imports based on THIS file
-moduledir = os.path.dirname(__file__)
-shareddir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-sys.path.append(shareddir)
-
 #from sopel.tools.calculation import eval_equation
-from ramchips import *
+from sopel.module.ramchips import *
 
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
