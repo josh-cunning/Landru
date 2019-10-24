@@ -4,10 +4,16 @@ import random
 import re
 import operator
 import sopel.module
-import operator
-import sopel.module
-from sopel.tools.calculation import eval_equation
-from sopel.module.ramchips import getbalance
+import os
+import sys
+
+# imports based on THIS file
+moduledir = os.path.dirname(__file__)
+shareddir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(shareddir)
+
+#from sopel.tools.calculation import eval_equation
+from ramchips import *
 
 @sopel.module.commands("ram")
 def moarram(bot, trigger):
