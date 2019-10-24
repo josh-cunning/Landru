@@ -18,8 +18,8 @@ from ramchips import *
 def moarram(bot, trigger):
 
     triggerargsarray = spicemanip.main(trigger, 'create')
-    maincom = spicemanip.main(botcom.triggerargsarray, 1).lower()[1:]
-    triggerargsarray = spicemanip.main(botcom.triggerargsarray, '2+', "list")
+    maincom = spicemanip.main(triggerargsarray, 1).lower()[1:]
+    triggerargsarray = spicemanip.main(triggerargsarray, '2+', "list")
     bot.say(str(maincom) + " " + str(triggerargsarray))
     #bot.say(str(coms))
     nick = trigger.nick
