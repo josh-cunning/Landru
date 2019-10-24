@@ -8,7 +8,29 @@
 #
 # When working on core IRC protocol related features, consult protocol
 # documentation at http://www.irchelp.org/irchelp/rfc/
+from __future__ import unicode_literals, absolute_import, print_function, division
 
+import sys
+import time
+import socket
+import asyncore
+import asynchat
+import os
+import codecs
+import traceback
+from sopel.logger import get_logger
+from sopel.tools import stderr, Identifier
+from sopel.trigger import PreTrigger
+try:
+    import ssl
+    if not hasattr(ssl, 'match_hostname'):
+        # Attempt to import ssl_match_hostname from python-backports
+        import backports.ssl_match_hostname
+        ssl.match_hostname = backports.ssl_match_hostname.match_hostname
+        ssl.CertificateError = backports.ssl_match_hostname.CertificateError
+    has_ssl = True
+except ImportError:
+    # no SSL support
     has_ssl = False
 
 import errno
@@ -132,7 +154,7 @@ class Bot(asynchat.async_chat):
 
             # Ends the message with CR-LF
             temp = temp + '\r\n'
-
+            
             # Log and output the message
             self.log_raw(temp, '>>')
             self.send(temp.encode('utf-8'))
