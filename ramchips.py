@@ -3,11 +3,13 @@ from __future__ import unicode_literals, absolute_import, print_function, divisi
 import random
 import re
 import operator
-
 import sopel.module
 import operator
-
 import sopel.module
+moduledir = os.path.dirname(__file__)
+shareddir = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(shareddir)
+from landrushared import *
 
 def getbalance(bot,nick):
     bl=0
@@ -16,24 +18,18 @@ def getbalance(bot,nick):
 
 def addram(bot,nick,amount):
      bl = 0
-     amount = int(amount)
+     if not is_digit(amount)
+         amount = 1
      bl = bot.db.get_nick_value(nick, 'rambank') or 0
      bl = int(bl) + amount
      if bl<0:
         bl =0
      bot.db.set_nick_value(nick,'rambank',bl)
 
-def is_digit(n):
-    try:
-        int(n)
-        return True
-    except ValueError:
-        return  False
 
 
-def sellram(bot,nick):
+def sellram(bot):
      bl=1
-     bl = bot.db.get_nick_value(nick, 'rambank') or 1
      stock = bot.db.set_nick_value(botstock, 'rambank') or 1
      if stock <=10:
         payout = 20

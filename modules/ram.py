@@ -12,6 +12,7 @@ moduledir = os.path.dirname(__file__)
 shareddir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(shareddir)
 from ramchips import *
+from landrushared import *
 
 
 @sopel.module.commands("ram")
@@ -45,5 +46,15 @@ def moarram(bot, trigger):
             bl = 0
             bl = getbalance(bot, 'botstock')
             bot.say("The center warehouse has " + str(bl) + " RAM chips")
+
+        elif coms == 'sell':
+            payout = sellram(bot)
+            bl = getbalance(bot,nick)
+            payment = bl * payout
+            sale = -abs(bl)
+            addlat(bot,'nick, sale)            
+            stock = getbalance(bot, 'botstock')
+            addram(bot,'botstock',bl)
+
         else:
             bot.say("Get your own ram")
