@@ -35,6 +35,7 @@ def moarram(bot, trigger):
             amount = spicemanip.main(triggerargsarray,2)
             if not is_digit(amount):
                 amount =  1
+            amount = int(amount)
             addram(bot,nick,amount)
             if int(amount) > 0:
                 key = " gets "
@@ -68,7 +69,7 @@ def moarram(bot, trigger):
             addlat(bot, nick, sale)
             bot.say(nick + " sells " + str(sale) + " for " + str(payment))
             addram(bot,'botstock',sale)
-            addram(bot,nick,-abs(sales))
+            addram(bot,nick,-abs(sale))
 
         else:
             bot.say("Get your own ram")
