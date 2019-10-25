@@ -23,10 +23,12 @@ def addram(bot,nick,amount):
      if not is_digit(amount):
          amount = 1
      amount = int(amount)
+     bot.say("Amount " + str(amount))
      bl = bot.db.get_nick_value(nick, 'rambank') or 0
+     bot.say("BL " + str(bl))
      bl = int(bl)
      bl = bl + amount
-     bot.say("Amount " + str(bl))
+
      if bl<0:
         bl =0
      bot.db.set_nick_value(nick,'rambank',bl)
