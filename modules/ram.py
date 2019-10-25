@@ -40,16 +40,16 @@ def moarram(bot, trigger):
 
         elif coms == 'balance':
             bl = 0
-            bl = getbalance(bot,nick)
+            bl = getbalanceram(bot,nick)
             bot.say(nick + " has " + str(bl) + " RAM chips")
 
         elif coms == 'stock':
-            bl = getbalance(bot, 'botstock')
+            bl = getbalanceram(bot, 'botstock')
             bot.say("The center warehouse has " + str(bl) + " RAM chips")
 
         elif coms == 'sell':
             payout = sellram(bot)
-            bl = getbalance(bot,nick)
+            bl = getbalanceram(bot,nick)
             payment = bl * payout
             sale = -abs(bl)
             addlat(bot, nick, sale)

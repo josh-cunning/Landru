@@ -9,7 +9,7 @@ import sys
 import spicemanip
 from landrushared import *
 
-def getbalance(bot,nick):
+def getbalancelat(bot,nick):
     bl=0
     bl = bot.db.get_nick_value(nick, 'latbank') or 0
     return bl
