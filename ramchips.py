@@ -20,8 +20,16 @@ def addram(bot,nick,amount):
      bl = bot.db.get_nick_value(nick, 'rambank') or 0
      bl = int(bl) + amount
      if bl<0:
-         bl =0
+        bl =0
      bot.db.set_nick_value(nick,'rambank',bl)
+
+def is_digit(n):
+    try:
+        int(n)
+        return True
+    except ValueError:
+        return  False
+
 
 def sellram(bot,nick):
      bl=1
