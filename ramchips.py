@@ -14,7 +14,7 @@ from landrushared import *
 
 def getbalance(bot,nick):
     bl=0
-    bl = bot.db.get_nick_value(nick, 'rambank') or 0
+    bl = bot.db.get_nick_value(nick, 'rambank')
     return bl
 
 def addram(bot,nick,amount):
