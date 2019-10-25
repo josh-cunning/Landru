@@ -13,6 +13,7 @@ shareddir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(shareddir)
 from ramchips import *
 from landrushared import *
+from latinum import *
 
 
 @sopel.module.commands("ram")
@@ -52,7 +53,7 @@ def moarram(bot, trigger):
             bl = getbalance(bot,nick)
             payment = bl * payout
             sale = -abs(bl)
-            addlat(bot,nick, sale)
+            addlat(bot, nick, sale)
             stock = getbalance(bot, 'botstock')
             addram(bot,'botstock',bl)
 
