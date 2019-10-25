@@ -18,7 +18,7 @@ def getbalance(bot,nick):
 
 def addram(bot,nick,amount):
      bl = 0
-     if not is_digit(amount)
+     if not is_digit(amount):
          amount = 1
      bl = bot.db.get_nick_value(nick, 'rambank') or 0
      bl = int(bl) + amount
