@@ -12,7 +12,7 @@ import spicemanip
 
 from landrushared import *
 
-def getbalance(bot,nick):
+def getbalanceram(bot,nick):
     bl=0
     bl = bot.db.get_nick_value(nick, 'rambank')
     return bl
