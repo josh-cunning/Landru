@@ -65,11 +65,14 @@ def moarram(bot, trigger):
         elif coms == 'sell':
             payout = sellram(bot)
             sale = getbalanceram(bot,nick)
-            payment = sale * payout
-            addlat(bot, nick, sale)
-            bot.say(nick + " sells " + str(sale) + " for " + str(payment))
-            addram(bot,'botstock',sale)
-            addram(bot,nick,-abs(sale))
+            if sale > 0
+                payment = sale * payout
+                addlat(bot, nick, sale)
+                bot.say(nick + " sells " + str(sale) + " for " + str(payment))
+                addram(bot,'botstock',sale)
+                addram(bot,nick,-abs(sale))
+            else:
+                bot.say(nick + " does not have chips to sell")
 
         else:
             bot.say("Get your own ram")
