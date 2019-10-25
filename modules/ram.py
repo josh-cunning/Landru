@@ -65,7 +65,7 @@ def moarram(bot, trigger):
         elif coms == 'sell':
             payout = sellram(bot)
             sale = getbalanceram(bot,nick)
-            if sale > 0
+            if sale > 0:
                 payment = sale * payout
                 addlat(bot, nick, sale)
                 bot.say(nick + " sells " + str(sale) + " for " + str(payment))
