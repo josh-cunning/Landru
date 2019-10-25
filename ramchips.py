@@ -31,7 +31,7 @@ def addram(bot,nick,amount):
 
 def sellram(bot):
      bl=1
-     stock = bot.db.set_nick_value(botstock, 'rambank') or 1
+     stock = bot.db.set_nick_value(bot,'rambank') or 1
      if stock <=10:
         payout = 20
      elif (stock >10 and stock <20):
@@ -44,5 +44,5 @@ def sellram(bot):
 
 def ramstock(bot):
     stock = bl=0
-    bl = bot.db.get_nick_value(botstock, 'rambank') or 0
+    bl = bot.db.get_nick_value('botstock', 'rambank') or 0
     return bl
