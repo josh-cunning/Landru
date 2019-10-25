@@ -16,6 +16,7 @@ def getbalance(bot,nick):
 
 def addram(bot,nick,amount):
      bl = 0
+     amount = float(amount)
      bl = bot.db.get_nick_value(nick, 'rambank') or 0
-     bl = int(bl) + amount
+     bl = float(bl) + amount
      bot.db.set_nick_value(nick,'rambank',bl)
