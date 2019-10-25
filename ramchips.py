@@ -6,6 +6,10 @@ import operator
 import sopel.module
 import operator
 import sopel.module
+import os
+import sys
+import spicemanip
+
 moduledir = os.path.dirname(__file__)
 shareddir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(shareddir)
