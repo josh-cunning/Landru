@@ -66,7 +66,7 @@ def moarram(bot, trigger):
             sale = getbalanceram(bot,nick)
             payment = sale * payout
             addlat(bot, nick, sale)
-            bot.say(nick + " sells " + str(sales) + " for " + str(payment))
+            bot.say(nick + " sells " + str(sale) + " for " + str(payment))
             addram(bot,'botstock',sale)
             addram(bot,nick,-abs(sales))
 
