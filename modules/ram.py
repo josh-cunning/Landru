@@ -40,7 +40,7 @@ def moarram(bot, trigger):
                 key = " gets "
             else:
                 key = " loses "
-
+            amount = abs(amount)
             bot.say(nick + key + str(amount) + " ramchips" )
 
         elif coms == 'balance':
