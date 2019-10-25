@@ -36,7 +36,12 @@ def moarram(bot, trigger):
             if not is_digit(amount):
                 amount =  1
             addram(bot,nick,amount)
-            bot.say(nick + " gets " + str(amount) + " ramchips" )
+            if amount > 0:
+                key = " gets "
+            else:
+                key = " loses "
+
+            bot.say(nick + key + str(amount) + " ramchips" )
 
         elif coms == 'balance':
             bl = 0
@@ -49,14 +54,21 @@ def moarram(bot, trigger):
             payout = sellram(bot)
             bot.say("Ram is currently selling for " + str(payout))
 
+        elif coms ='ramhouse':
+            amount = spicemanip.main(triggerargsarray,2)
+            if not is_digit(amount):
+                amount =  1
+            addram(bot,'botstock',amount)
+            bot.say("Bot stock gets:  " ramchips" ")
+
         elif coms == 'sell':
             payout = sellram(bot)
-            bl = getbalanceram(bot,nick)
-            payment = bl * payout
-            sale = -abs(bl)
+            sale = getbalanceram(bot,nick)
+            payment = sale * payout
             addlat(bot, nick, sale)
             bot.say(nick + " sells " + str(bl) + " for " + str(sale))
-            addram(bot,'botstock',bl)
+            addram(bot,'botstock',sale)
+            addram(bot,nick,-abs(sales))
 
         else:
             bot.say("Get your own ram")
