@@ -54,7 +54,7 @@ def moarram(bot, trigger):
             payout = sellram(bot)
             bot.say("Ram is currently selling for " + str(payout))
 
-        elif coms ='ramhouse':
+        elif coms =='ramhouse':
             amount = spicemanip.main(triggerargsarray,2)
             if not is_digit(amount):
                 amount =  1
