@@ -36,14 +36,14 @@ def moarram(bot, trigger):
                 addram(bot,nick,amount)
                 bot.say(nick + " gets " + str(amount) + " ramchips" )
 
-            elif coms == 'balance':
-                bl = 0
-                bl = getbalance(bot,nick)
-                bot.say(nick + " has " + str(bl) + " RAM chips")
+        elif coms == 'balance':
+            bl = 0
+            bl = getbalance(bot,nick)
+            bot.say(nick + " has " + str(bl) + " RAM chips")
 
-            elif coms == 'stock':
-                bl = 0
-                bl = getbalance(bot,botstock)
-                bot.say("The center warehouse has " + str(bl) + " RAM chips")
-            else:
-                bot.say("Get your own ram")
+        elif coms == 'stock':
+            bl = 0
+            bl = getbalance(bot,botstock)
+            bot.say("The center warehouse has " + str(bl) + " RAM chips")
+        else:
+            bot.say("Get your own ram")
