@@ -35,7 +35,7 @@ def sellram(bot,nick):
         payout = 5
      elif (stock >100):
         payout = 1
-    return payout
+     return payout
 
 def ramstock(bot):
     stock = bl=0
