@@ -31,7 +31,7 @@ def moarram(bot, trigger):
     else:
         if coms == 'add':
             amount = spicemanip.main(triggerargsarray,2)
-            if not amount.isdigit():
+            if not is_digit(amount):
                 amount =  1
             addram(bot,nick,amount)
             bot.say(nick + " gets " + str(amount) + " ramchips" )
