@@ -38,9 +38,9 @@ def sellram(bot):
      stock = bot.db.get_nick_value('botstock', 'rambank') or 0
      if stock <=10:
         payout = 20
-    elif (stock >10 and stock <=20):
+     elif (stock >10 and stock <=20):
         payout = 10
-    elif (stock >20 and stock <=100):
+     elif (stock >20 and stock <=100):
         payout = 5
      elif (stock >100):
         payout = 1
