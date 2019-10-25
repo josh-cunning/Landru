@@ -46,6 +46,8 @@ def moarram(bot, trigger):
         elif coms == 'stock':
             bl = getbalanceram(bot, 'botstock')
             bot.say("The center warehouse has " + str(bl) + " RAM chips")
+            payout = sellram(bot)
+            bot.say("Ram is currently selling for " + str(payout))
 
         elif coms == 'sell':
             payout = sellram(bot)

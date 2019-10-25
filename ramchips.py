@@ -23,9 +23,7 @@ def addram(bot,nick,amount):
      if not is_digit(amount):
          amount = 1
      amount = int(amount)
-     bot.say("Amount " + str(amount))
      bl = bot.db.get_nick_value(nick, 'rambank') or 0
-     bot.say("BL " + str(bl))
      bl = int(bl)
      bl = bl + amount
 
@@ -49,6 +47,6 @@ def sellram(bot):
      return payout
 
 def ramstock(bot):
-    stock = bl=0
+
     bl = bot.db.get_nick_value('botstock', 'rambank') or 0
     return bl
