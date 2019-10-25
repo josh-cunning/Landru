@@ -59,7 +59,7 @@ def moarram(bot, trigger):
             if not is_digit(amount):
                 amount =  1
             addram(bot,'botstock',amount)
-            bot.say("Bot stock gets:  " ramchips" ")
+            bot.say("Bot stock gets:  " ramchips")
 
         elif coms == 'sell':
             payout = sellram(bot)
