@@ -36,7 +36,7 @@ def moarram(bot, trigger):
             if not is_digit(amount):
                 amount =  1
             addram(bot,nick,amount)
-            if amount > 0:
+            if int(amount) > 0:
                 key = " gets "
             else:
                 key = " loses "
