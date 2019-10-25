@@ -28,19 +28,22 @@ def moarram(bot, trigger):
         amount = 1
         addram(bot,nick,amount)
         bot.say(nick + " gets " + str(amount) + " ramchips" )
-    if coms == 'add':
-        amount = spicemanip.main(triggerargsarray,2)
-        if not amount:
-            amount =  1
-        addram(bot,nick,amount)
-        bot.say(nick + " gets " + str(amount) + " ramchips" )
-    elif coms == 'balance':
-        bl = 0
-        bl = getbalance(bot,nick)
-        bot.say(nick + " has " + str(bl) + " RAM chips")
-    elif coms == 'stock':
-        bl = 0
-        bl = getbalance(bot,botstock)
-        bot.say("The center warehouse has " + str(bl) + " RAM chips")
     else:
-        bot.say("Get your own ram")
+        if coms == 'add':
+            amount = spicemanip.main(triggerargsarray,2)
+            if not amount:
+                amount =  1
+                addram(bot,nick,amount)
+                bot.say(nick + " gets " + str(amount) + " ramchips" )
+
+            elif coms == 'balance':
+                bl = 0
+                bl = getbalance(bot,nick)
+                bot.say(nick + " has " + str(bl) + " RAM chips")
+
+            elif coms == 'stock':
+                bl = 0
+                bl = getbalance(bot,botstock)
+                bot.say("The center warehouse has " + str(bl) + " RAM chips")
+            else:
+                bot.say("Get your own ram")
