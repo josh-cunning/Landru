@@ -11,13 +11,17 @@ import sys
 import spicemanip
 
 from landrushared import *
+from latinum import *
 
+#____________CHIPS
 def getbalanceram(bot,nick):
     bl=0
     bl = bot.db.get_nick_value(nick, 'rambank')
     return bl
 
+
 def addram(bot,nick,amount):
+    ###Amount admin only
      bl = 0
 
      if not is_digit(amount):
@@ -30,8 +34,6 @@ def addram(bot,nick,amount):
      if bl<0:
         bl =0
      bot.db.set_nick_value(nick,'rambank',bl)
-
-
 
 def sellram(bot):
 
@@ -52,3 +54,31 @@ def ramstock(bot):
 
     bl = bot.db.get_nick_value('botstock', 'rambank') or 0
     return bl
+
+
+#____________BOTS
+
+def getrambot(bot,nick):
+    ramworkers = 0
+    ramworkers = bot.db.get_nick_value(nick, 'rambots') or 0
+    return ramworkers
+
+def addrambot(bot, nick, amount):
+     bl = 0
+     if not is_digit(amount):
+         amount = 1
+     amount = int(amount)
+     if amount <= 0:
+         amount = 1
+
+     totalbots = 0
+     totalbots = bot.db.get_nick_value(nick, 'rambots') or 0
+     cash =  getbalancelat(bot,nick)
+     costbots = int(totalbots) + int(amount)
+     if costbot <= cash:
+         bl = totalbots + amount
+         bot.db.set_nick_value(nick,'rambots',bl)
+         addlat(bot,nick,-(costbots))
+         return True
+     else:
+         return False

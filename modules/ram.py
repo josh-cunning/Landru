@@ -74,5 +74,16 @@ def moarram(bot, trigger):
             else:
                 bot.say(nick + " does not have chips to sell")
 
+        elif coms == 'buybot':
+            amount = spicemanip.main(triggerargsarray,2)
+            if not is_digit(amount):
+                amount =  1
+            if addrambot(bot,nick,amount):
+                key = " buys "
+                bot.say(nick + key + " worker bots")
+            else:
+                bot.say("You need more bars to do that")
+
+
         else:
             bot.say("Get your own ram")
