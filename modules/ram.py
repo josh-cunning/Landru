@@ -110,7 +110,9 @@ def moarram(bot, trigger):
                 # lvl 2:2500 bars ram uses half suppleis
                 #lvl 3: 5000 bars marketingbot your ram sells for 1 extra bar per chips
                 #lvl 4: 8000 bars auto buy supplies
-                #lvl 5: 12000 bars: supplies          
+                #lvl 5: 12000 bars: supplies
+            bot.say(helpfile) 
+
 
 
 
