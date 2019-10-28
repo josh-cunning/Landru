@@ -95,7 +95,7 @@ def getbotlvl(bot,nick):
 
 def suppliesbot(bot, nick):
 
-     bl = bot.db.get_nick_value(nick, 'supples') or 0
+     bl = bot.db.get_nick_value('botstock','supplyprice') or 1
      return bl
 
 def suppliesprice(bot):
@@ -114,7 +114,7 @@ def buysupplies(bot,nick):
     saleprice = suppliesprice(bot)
     bot.say(str(saleprice))
     cost = (supplestock * saleprice)
-    bot.say(str(cost))
+    bot.say(str())
     if lvl == 1:
         supplystorage = 50
     else:
