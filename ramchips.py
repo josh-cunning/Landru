@@ -102,7 +102,7 @@ def buysupplies(bot,nick):
     if suppliesbot(bot,nick) >= 0 :
         return'supplies not empty'
     cash =  getbalancelat(bot,nick)
-    int(lvl) = bot.db.get_nick_value(nick, 'botlvl') or 0
+    lvl = bot.db.get_nick_value(nick, 'botlvl') or 0
     saleprice = bot.db.get_nick_value(bot, 'ramsupplyprice')
     cost = (suppliesstorage * saleprice)
     if lvl == 1:
