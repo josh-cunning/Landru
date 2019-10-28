@@ -94,32 +94,25 @@ def moarram(bot, trigger):
         elif coms == 'help':
             helpcmd = spicemanip.main(triggerargsarray,2)
             helpfile = "type help command name to see more: stock, add, balance, sell,buy,upgrades"
-            if helpcmd == 'stock'
+            if helpcmd == 'stock':
                 helpfile = 'The stock command will show you how many ram chips are in the warehouse and what the current sell price is'
-            elif helpcmd == 'balance'
+            elif helpcmd == 'balance':
                 helpfile = 'The balance command will show you how many ram chips you have built'
             elif helpcmd == 'add':
                 helpfile = 'The add command will build 1 ram chip, typing without a command also builds a chip. Your storage will only hold 50 at time'
-            elif helpcmd == 'sell'
+            elif helpcmd == 'sell':
                 helpfile = 'The sell command will sell all the ram chips you have in storage for latinum see the stock command for current prices'
-            elif helpcmd == 'buy'
+            elif helpcmd == 'buy':
                 helpfile = 'The buy command will buy factory robots to make chips for you. You can include an amount. Bot prices are based your total bot count'
-            elif helpcmd == 'upgrades'
-                helpfile = 'The upgrades command with upgrade your factory you. Each lvl gives you more features for a higher cost.''
+            elif helpcmd == 'upgrades':
+                helpfile = 'The upgrades command with upgrade your factory you. Each lvl gives you more features for a higher cost.'
                 #LVL 1: 500 bar: supplies storage goes to 100
                 # lvl 2:2500 bars ram uses half suppleis
                 #lvl 3: 5000 bars marketingbot your ram sells for 1 extra bar per chips
                 #lvl 4: 8000 bars auto buy supplies
-                #lvl 5: 12000 bars: supplies
+                #lvl 5: 12000 bars: supplies          
 
 
 
-
-
-        else:
-            bot.say("You need more bars to do that")
-
-
-
-        else:
-            bot.say("Get your own ram")
+            else:
+                bot.say("Get your own ram")
