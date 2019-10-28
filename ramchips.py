@@ -113,7 +113,7 @@ def buysupplies(bot,nick):
     lvl = getbotlvl(bot,nick)
     saleprice = supplyprice(bot)
     cost = (supplestock * saleprice)
-    bot.say("Cash: " + str(cash) + " Lvl "+ str(lvl) + " saleprice "  + str(saleprice) + " Cost: " + str(cost))
+    bot.say("Cash: " + str(cash) + " Lvl "+ str(lvl) + " saleprice: "  + str(saleprice) + " Cost: " + str(cost))
 
     if supplestock > 0:
         msg ='You already have: ' + str(supplestock) + ' supplies'
