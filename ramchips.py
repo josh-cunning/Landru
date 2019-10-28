@@ -107,8 +107,9 @@ def buysupplies(bot,nick):
     bot.say("cash")
     cash =  getbalancelat(bot,nick)
     lvl = getbotlvl(bot,nick)
+    bot.say(str(lvl))
     saleprice = bot.db.get_nick_value(bot, 'ramsupplyprice')
-
+    bot.say(str(saleprice))
     cost = (suppliesstorage * saleprice)
     if lvl == 1:
         supplystorage = 50
