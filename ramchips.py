@@ -99,7 +99,7 @@ def suppliesbot(bot, nick):
      return bl
 
 def buysupplies(bot,nick):
-    if >= 0 suppliesbot(bot,nick):
+    if suppliesbot(bot,nick) >= 0 :
         return'supplies not empty'
     cash =  getbalancelat(bot,nick)
     int(lvl) = bot.db.get_nick_value(nick, 'botlvl') or 0

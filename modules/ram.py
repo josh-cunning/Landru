@@ -84,7 +84,7 @@ def moarram(bot, trigger):
 
         elif coms == 'supplies':
             purchase = buysupplies(bot,nick)
-            if purchase = '0':
+            if purchase == '0':
                 bot.say(" You have filled your supplies")
             else:
                 bot.say(purchase)
