@@ -22,6 +22,7 @@ def getbalanceram(bot,nick):
 
 def addram(bot,nick,amount):
     ###Amount admin only
+    ###delay repeat by x secconds
      bl = 0
 
      if not is_digit(amount):
@@ -36,7 +37,7 @@ def addram(bot,nick,amount):
      bot.db.set_nick_value(nick,'rambank',bl)
 
 def sellram(bot):
-
+     #limit how soon you can sell
      stock = bot.db.get_nick_value('botstock', 'rambank') or 0
      if stock <=10:
         payout = 20
@@ -51,7 +52,7 @@ def sellram(bot):
      return payout
 
 def ramstock(bot):
-
+    # random change to sell stockpile at some points
     bl = bot.db.get_nick_value('botstock', 'rambank') or 0
     return bl
 
@@ -83,11 +84,33 @@ def addrambot(bot, nick, amount):
      else:
          return False
 
- def rambotwork(bot, nick):
+def rambotwork(bot, nick):
      botcount =getrambot(bot,nick)
      botlvl = getbotlvl(bot,nick)
      ouptut = botcount
 
- def getbotlvl(bot,nick):
+def getbotlvl(bot,nick):
      botlvl =  bot.db.get_nick_value(nick, 'botlvl') or 0
      return botlvl
+
+def suppliesbot(bot, nick):
+
+     bl = bot.db.get_nick_value(nick, 'botsupplies') or 0
+     return bl
+
+def buysupplies(bot,nick):
+    if >= 0 suppliesbot(bot,nick):
+        return'supplies not empty'
+    cash =  getbalancelat(bot,nick)
+    int(lvl) = bot.db.get_nick_value(nick, 'botlvl') or 0
+    saleprice = bot.db.get_nick_value(bot, 'ramsupplyprice')
+    cost = (suppliesstorage * saleprice)
+    if lvl = 1:
+        supplystorage = 50
+    else:
+        supplystorage = 100
+    if cash < cost :
+        return 'Not enough cash'
+    bot.db.set_nick_value(nick, 'botsupplies',supplystorage)
+    addlat(bot,nick,-(cost))
+    return '0'

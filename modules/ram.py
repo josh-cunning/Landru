@@ -74,13 +74,22 @@ def moarram(bot, trigger):
             else:
                 bot.say(nick + " does not have chips to sell")
 
-        elif coms == 'buy':
+        elif coms == 'buybot':
             amount = spicemanip.main(triggerargsarray,2)
             if not is_digit(amount):
                 amount =  1
             if addrambot(bot,nick,amount):
                 key = " buys "
                 bot.say(nick + key + " worker bots")
+
+        elif coms == 'supplies':
+            purchase = buysupplies(bot,nick)
+            if purchase = '0':
+                bot.say(" You have filled your supplies")
+            else:
+                bot.say(purchase)
+
+
 
         elif coms == 'help':
             helpcmd = spicemanip.main(triggerargsarray,2)
@@ -96,12 +105,12 @@ def moarram(bot, trigger):
             elif helpcmd == 'buy'
                 helpfile = 'The buy command will buy factory robots to make chips for you. You can include an amount. Bot prices are based your total bot count'
             elif helpcmd == 'upgrades'
-                helpfile = 'The upgrades command with upgrade your factory you. Each lvl gives you more features for a higher cost.
-                #LVL 1: 500 bars salebot that will aotmatic sale your ram when it gets full.
-                # lvl 2:2500 bars storage goes to 100'
+                helpfile = 'The upgrades command with upgrade your factory you. Each lvl gives you more features for a higher cost.''
+                #LVL 1: 500 bar: supplies storage goes to 100
+                # lvl 2:2500 bars ram uses half suppleis
                 #lvl 3: 5000 bars marketingbot your ram sells for 1 extra bar per chips
-                #lvl 4: 8000 bars stock goes to 1000
-                #lvl 5
+                #lvl 4: 8000 bars auto buy supplies
+                #lvl 5: 12000 bars: supplies
 
 
 

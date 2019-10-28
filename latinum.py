@@ -24,4 +24,4 @@ def addlat(bot,nick,amount):
     bl = int(bl) + amount
     if bl<0:
         bl =0
-     bot.db.set_nick_value(nick,'latbank',bl)
+    bot.db.set_nick_value(nick,'latbank',bl)
