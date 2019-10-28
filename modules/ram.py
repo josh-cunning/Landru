@@ -74,15 +74,42 @@ def moarram(bot, trigger):
             else:
                 bot.say(nick + " does not have chips to sell")
 
-        elif coms == 'buybot':
+        elif coms == 'buy':
             amount = spicemanip.main(triggerargsarray,2)
             if not is_digit(amount):
                 amount =  1
             if addrambot(bot,nick,amount):
                 key = " buys "
                 bot.say(nick + key + " worker bots")
-            else:
-                bot.say("You need more bars to do that")
+
+        elif coms == 'help':
+            helpcmd = spicemanip.main(triggerargsarray,2)
+            helpfile = "type help command name to see more: stock, add, balance, sell,buy,upgrades"
+            if helpcmd == 'stock'
+                helpfile = 'The stock command will show you how many ram chips are in the warehouse and what the current sell price is'
+            elif helpcmd == 'balance'
+                helpfile = 'The balance command will show you how many ram chips you have built'
+            elif helpcmd == 'add':
+                helpfile = 'The add command will build 1 ram chip, typing without a command also builds a chip. Your storage will only hold 50 at time'
+            elif helpcmd == 'sell'
+                helpfile = 'The sell command will sell all the ram chips you have in storage for latinum see the stock command for current prices'
+            elif helpcmd == 'buy'
+                helpfile = 'The buy command will buy factory robots to make chips for you. You can include an amount. Bot prices are based your total bot count'
+            elif helpcmd == 'upgrades'
+                helpfile = 'The upgrades command with upgrade your factory you. Each lvl gives you more features for a higher cost.
+                #LVL 1: 500 bars salebot that will aotmatic sale your ram when it gets full.
+                # lvl 2:2500 bars storage goes to 100'
+                #lvl 3: 5000 bars marketingbot your ram sells for 1 extra bar per chips
+                #lvl 4: 8000 bars stock goes to 1000
+                #lvl 5
+
+
+
+
+
+        else:
+            bot.say("You need more bars to do that")
+
 
 
         else:

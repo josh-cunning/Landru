@@ -82,3 +82,12 @@ def addrambot(bot, nick, amount):
          return True
      else:
          return False
+
+ def rambotwork(bot, nick):
+     botcount =getrambot(bot,nick)
+     botlvl = getbotlvl(bot,nick)
+     ouptut = botcount
+
+ def getbotlvl(bot,nick):
+     botlvl =  bot.db.get_nick_value(nick, 'botlvl') or 0
+     return botlvl
