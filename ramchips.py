@@ -97,34 +97,34 @@ def getbotlvl(bot,nick):
 
 ##### Supplies
 
-def supplybot(bot):
+def supplyprice(bot):
     # random change to sell stockpile at some points
     bl = bot.db.get_nick_value('botstock', 'supplyprice') or 1
     return bl
 
-def suppliesbot(bot, nick):
+def supplybalance(bot, nick):
 
      bl = bot.db.get_nick_value(nick, 'supplies') or 0
      return bl
 
 def buysupplies(bot,nick):
-    supplestock = suppliesbot(bot,nick)
-    bot.say(str(supplestock))
+    supplestock = supplybalance(bot,nick)
+    cash =  getbalancelat(bot,nick)
+    lvl = getbotlvl(bot,nick)
+    saleprice = supplyprice(bot)
+    cost = (supplestock * saleprice)
+    bot.say("Cash: " + str(cash) + " Lvl "+ str(lvl) + " saleprice "  + str(salesprice) + " Cost: " + str(cost))
+
     if supplestock > 0:
         msg ='You already have: ' + str(supplestock) + ' supplies'
         return msg
-    bot.say("cash")
-    cash =  getbalancelat(bot,nick)
-    lvl = getbotlvl(bot,nick)
-    saleprice = supplybot(bot)
-    bot.say(str(saleprice))
-    cost = (supplestock * saleprice)
+
     if lvl == 1:
         supplystorage = 50
     else:
         supplystorage = 100
     if cash < cost :
         return 'Not enough cash'
-    bot.db.set_nick_value(nick, 'botsupplies',supplystorage)
+    bot.db.set_nick_value(nick, 'supplies',supplystorage)
     addlat(bot,nick,-(cost))
     return '0'
