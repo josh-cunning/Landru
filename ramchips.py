@@ -98,18 +98,23 @@ def suppliesbot(bot, nick):
      bl = bot.db.get_nick_value(nick, 'supples') or 0
      return bl
 
+def suppliesprice(bot):
+    salesprice = bot.db.get_nick_value(bot, 'ramsupplyprice') or 1
+    return salesprice
+
 def buysupplies(bot,nick):
     supplestock = suppliesbot(bot,nick)
     bot.say(str(supplestock))
     if supplestock > 0:
         msg ='You already have: ' + str(supplestock) + ' supplies'
         return msg
-    bot.say("cash")
+
     cash =  getbalancelat(bot,nick)
     lvl = getbotlvl(bot,nick)
-    saleprice = bot.db.get_nick_value(bot, 'ramsupplyprice') or 1
+    saleprice = suppliesprice(bot)
     bot.say(str(saleprice))
     cost = (supplestock * saleprice)
+    bot.say(str(cost))
     if lvl == 1:
         supplystorage = 50
     else:
