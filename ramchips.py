@@ -75,11 +75,11 @@ def addrambot(bot, nick, amount):
      totalbots = 0
      totalbots = bot.db.get_nick_value(nick, 'rambots') or 0
      cash =  getbalancelat(bot,nick)
-     costbots = int(totalbots) + int(amount)
+     costbot = int(totalbots) + int(amount)
      if costbot <= cash:
          bl = totalbots + amount
          bot.db.set_nick_value(nick,'rambots',bl)
-         addlat(bot,nick,-(costbots))
+         addlat(bot,nick,-(costbot))
          return True
      else:
          return False
@@ -100,7 +100,9 @@ def suppliesbot(bot, nick):
 
 def buysupplies(bot,nick):
     if suppliesbot(bot,nick) >= 0 :
-        return'supplies not empty'
+        supplestock = suppliesbot(bot,nick)
+        msg ='You already have: ' +str(supplestock)
+        return msg
     cash =  getbalancelat(bot,nick)
     lvl = getbotlvl(bot,nick)
     saleprice = bot.db.get_nick_value(bot, 'ramsupplyprice')

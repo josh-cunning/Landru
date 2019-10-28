@@ -99,7 +99,7 @@ def moarram(bot, trigger):
             elif helpcmd == 'balance':
                 helpfile = 'The balance command will show you how many ram chips you have built'
             elif helpcmd == 'add':
-                helpfile = 'The add command will build 1 ram chip, typing without a command also builds a chip. Your storage will only hold 50 at time'
+                helpfile = 'The add command will build 1 ram chip, typing without a command also builds a chip. It takes 2 supply counts'
             elif helpcmd == 'sell':
                 helpfile = 'The sell command will sell all the ram chips you have in storage for latinum see the stock command for current prices'
             elif helpcmd == 'buy':
