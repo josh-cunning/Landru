@@ -89,9 +89,18 @@ def rambotwork(bot, nick):
      botlvl = getbotlvl(bot,nick)
      ouptut = botcount
 
+
+#________upgrades___________
 def getbotlvl(bot,nick):
      botlvl =  bot.db.get_nick_value(nick, 'botlvl') or 0
      return botlvl
+
+##### Supplies
+
+def supplybot(bot):
+    # random change to sell stockpile at some points
+    bl = bot.db.get_nick_value('botstock', 'supplyprice') or 1
+    return bl
 
 def suppliesbot(bot, nick):
 
@@ -107,7 +116,7 @@ def buysupplies(bot,nick):
     bot.say("cash")
     cash =  getbalancelat(bot,nick)
     lvl = getbotlvl(bot,nick)
-    saleprice = bot.db.get_nick_value('botstock', 'supplyprice')
+    saleprice = supplybot(bot)
     bot.say(str(saleprice))
     cost = (supplestock * saleprice)
     if lvl == 1:
