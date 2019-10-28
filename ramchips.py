@@ -99,7 +99,7 @@ def suppliesbot(bot, nick):
      return bl
 
 def buysupplies(bot,nick):
-    if suppliesbot(bot,nick) >= 0 :
+    if suppliesbot(bot,nick) <= 0 :
         supplestock = suppliesbot(bot,nick)
         msg ='You already have: ' +str(supplestock)
         return msg
