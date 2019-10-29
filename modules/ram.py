@@ -42,7 +42,7 @@ def moarram(bot, trigger):
             amount = spicemanip.main(triggerargsarray,3)
             if not target == 0:
                 nick = target
-            if not is_digit(amount):
+            if not landrushared.is_digit(amount):
                 amount =  1
             amount = int(amount)
             ramchips.addram(bot,nick,amount)
@@ -66,7 +66,7 @@ def moarram(bot, trigger):
 
         elif coms =='ramhouse':
             amount = spicemanip.main(triggerargsarray,2)
-            if not is_digit(amount):
+            if not landrushared.is_digit(amount):
                 amount =  1
             ramchips.addram(bot,'botstock',amount)
             bot.say("Bot stock gets: " + amount + " RAM chips")
@@ -85,7 +85,7 @@ def moarram(bot, trigger):
 
         elif coms == 'buybot':
             amount = spicemanip.main(triggerargsarray,2)
-            if not is_digit(amount):
+            if not landrushared.is_digit(amount):
                 amount =  1
             if ramchips.addrambot(bot,nick,amount):
                 key = " buys "

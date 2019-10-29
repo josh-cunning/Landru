@@ -16,7 +16,7 @@ def getbalancelat(bot,nick):
 
 def addlat(bot,nick,amount):
 
-    if not is_digit(amount):
+    if not landrushared.is_digit(amount):
         amount = 1
     amount = int(amount)
     bl = 0

@@ -42,7 +42,7 @@ def addram(bot,nick,amount):
      ###Amount admin only
      ###delay repeat by x secconds
     bl = 0
-    if not is_digit(amount):
+    if not landrushared.is_digit(amount):
         amount = 1
     amount = int(amount)
     bl = bot.db.get_nick_value(nick, 'rambank') or 0
@@ -80,7 +80,7 @@ def getrambot(bot,nick):
 
 def addrambot(bot, nick, amount):
     bl = 0
-    if not is_digit(amount):
+    if not landrushared.is_digit(amount):
         amount = 1
     amount = int(amount)
     if amount <= 0:
@@ -122,7 +122,7 @@ def supplybalance(bot, nick):
 
 def addsupply(bot,nick,amount):
     bl = 0
-    if not is_digit(amount):
+    if not landrushared.is_digit(amount):
         amount = 1
     amount = int(amount)
     bl = supplybalance(bot,nick)
