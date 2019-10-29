@@ -95,7 +95,6 @@ def moarram(bot, trigger):
             bl =ramchips.supplybalance(bot, nick)
             if bl <=0:
                 purchase = ramchips.buysupplies(bot,nick)
-            elif:                
                 if purchase == '0':
                     bot.say(" You have filled your supplies")
                 else:
