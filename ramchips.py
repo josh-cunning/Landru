@@ -35,7 +35,7 @@ def makeram(bot,nick):
         result = "You don't have enough supplies to make a chip"
         return result
     else:
-        addsupplies(bot,nick,-abs(amount))
+        addsupply(bot,nick,-abs(amount))
     return result
 
 def addram(bot,nick,amount):
@@ -120,7 +120,7 @@ def supplybalance(bot, nick):
     bl = bot.db.get_nick_value(nick, 'supplies') or 0
     return bl
 
-def addsupply(bot,nick,amount)
+def addsupply(bot,nick,amount):
     bl = 0
     if not is_digit(amount):
         amount = 1
