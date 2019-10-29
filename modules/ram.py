@@ -11,9 +11,9 @@ import spicemanip
 moduledir = os.path.dirname(__file__)
 shareddir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(shareddir)
-from ramchips import *
-from landrushared import *
-from latinum import *
+import ramchips import
+import landrushared import
+import latinum import
 
 
 @sopel.module.commands("ram")
@@ -28,11 +28,20 @@ def moarram(bot, trigger):
     nick = trigger.nick
     if not coms:
         amount = 1
-        addram(bot,nick,amount)
-        bot.say(nick + " gets " + str(amount) + " ramchips" )
+        result = makeram(bot,nick)
+        if not result == '0'
+            bot.say(nick + " gets " + str(amount) + " ramchips" )
+        else:
+             bot.say(str(result))
     else:
+
         if coms == 'add':
-            amount = spicemanip.main(triggerargsarray,2)
+            if bot.channels[trigger.sender].privileges[bot.nick] < HALFOP:
+                return bot.reply("I'm not a channel operator!")
+            target =  spicemanip.main(triggerargsarray,2) or 0
+            amount = spicemanip.main(triggerargsarray,3)
+            if not target == 0:
+                nick = target
             if not is_digit(amount):
                 amount =  1
             amount = int(amount)

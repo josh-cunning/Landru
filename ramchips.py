@@ -10,8 +10,8 @@ import os
 import sys
 import spicemanip
 
-from landrushared import *
-from latinum import *
+import landrushared
+import latinum
 
 #____________CHIPS
 def getbalanceram(bot,nick):
@@ -20,24 +20,47 @@ def getbalanceram(bot,nick):
     return bl
 
 
-def addram(bot,nick,amount):
-    ###Amount admin only
+def makeram(bot,nick):
+
     ###delay repeat by x secconds
      bl = 0
+     supplies = supplybalance(bot,nick)
+     lvl = getbotlvl(bot,nick)
+     amount = 1
+     cost = 2
+     result = '0'
+     #supply check
+     if lvl ==2:
+        cost = 1
+     if cost > supplies:
+         result = "You don't have enough supplies to make a chip"
+         return result
+     else:
+         bl = bot.db.get_nick_value(nick, 'rambank') or 0
+         bl = int(bl)
+         bl = bl + amount
+         bot.db.set_nick_value(nick,'rambank',bl)
+     return result
 
-     if not is_digit(amount):
-         amount = 1
-     amount = int(amount)
-     bl = bot.db.get_nick_value(nick, 'rambank') or 0
-     bl = int(bl)
-     bl = bl + amount
+ def addram(bot,nick,amount):
+     ###Amount admin only
+     ###delay repeat by x secconds
+      bl = 0
+      if not is_digit(amount):
+          amount = 1
+      amount = int(amount)
+      bl = bot.db.get_nick_value(nick, 'rambank') or 0
+      bl = int(bl)
+      bl =amount
+      if bl<0:
+         bl =0
+      bot.db.set_nick_value(nick,'rambank',bl)
 
-     if bl<0:
-        bl =0
-     bot.db.set_nick_value(nick,'rambank',bl)
+
 
 def sellram(bot):
      #limit how soon you can sell
+     payout = 1
      stock = bot.db.get_nick_value('botstock', 'rambank') or 0
      if stock <=10:
         payout = 20
@@ -45,10 +68,6 @@ def sellram(bot):
         payout = 10
      elif (stock >20 and stock <=100):
         payout = 5
-     elif (stock >100):
-        payout = 1
-     else:
-        payout = 1
      return payout
 
 def ramstock(bot):
@@ -113,7 +132,7 @@ def buysupplies(bot,nick):
     lvl = getbotlvl(bot,nick)
     saleprice = supplyprice(bot)
     cost = (supplestock * saleprice)
-    bot.say("Cash: " + str(cash) + " Lvl "+ str(lvl) + " saleprice: "  + str(saleprice) + " Cost: " + str(cost))
+
 
     if supplestock > 0:
         msg ='You already have: ' + str(supplestock) + ' supplies'

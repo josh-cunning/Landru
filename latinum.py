@@ -7,7 +7,7 @@ import sopel.module
 import os
 import sys
 import spicemanip
-from landrushared import *
+import landrushared
 
 def getbalancelat(bot,nick):
     bl=0
