@@ -35,6 +35,7 @@ def makeram(bot,nick):
         result = "You don't have enough supplies to make a chip"
         return result
     else:
+        latinum.addlat(bot,nick,-abs(cost))
         bl = bot.db.get_nick_value(nick, 'rambank') or 0
         bl = int(bl)
         bl = bl + amount
