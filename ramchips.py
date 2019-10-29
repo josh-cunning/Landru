@@ -9,7 +9,6 @@ import sopel.module
 import os
 import sys
 import spicemanip
-
 import landrushared
 import latinum
 
@@ -57,7 +56,6 @@ def addram(bot,nick,amount):
     bot.db.set_nick_value(nick,'rambank',bl)
 
 
-
 def sellram(bot):
      #limit how soon you can sell
     payout = 1
@@ -92,12 +90,12 @@ def addrambot(bot, nick, amount):
         amount = 1
     totalbots = 0
     totalbots = bot.db.get_nick_value(nick, 'rambots') or 0
-    cash =  getbalancelat(bot,nick)
+    cash =  latinum.getbalancelat(bot,nick)
     costbot = int(totalbots) + int(amount)
     if costbot <= cash:
         bl = totalbots + amount
         bot.db.set_nick_value(nick,'rambots',bl)
-        addlat(bot,nick,-(costbot))
+        latinum.addlat(bot,nick,-(costbot))
         return True
     else:
         return False
@@ -127,7 +125,7 @@ def supplybalance(bot, nick):
 
 def buysupplies(bot,nick):
     supplestock = supplybalance(bot,nick)
-    cash =  getbalancelat(bot,nick)
+    cash = latinum.getbalancelat(bot,nick)
     lvl = getbotlvl(bot,nick)
     saleprice = supplyprice(bot)
     cost = (supplestock * saleprice)
@@ -143,5 +141,5 @@ def buysupplies(bot,nick):
     if cash < cost :
         return 'Not enough cash'
     bot.db.set_nick_value(nick, 'supplies',supplystorage)
-    addlat(bot,nick,-(cost))
+    latinum.addlat(bot,nick,-(cost))
     return '0'
