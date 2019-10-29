@@ -139,10 +139,6 @@ def buysupplies(bot,nick):
     saleprice = supplyprice(bot)
     cost = (supplestock * saleprice)
 
-    if supplestock > 0:
-        msg ='You already have: ' + str(supplestock) + ' supplies'
-        return msg
-
     if lvl == 1:
         supplystorage = 50
     else:
