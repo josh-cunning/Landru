@@ -42,7 +42,7 @@ def makeram(bot,nick):
         bot.db.set_nick_value(nick,'rambank',bl)
     return result
 
- def addram(bot,nick,amount):
+def addram(bot,nick,amount):
      ###Amount admin only
      ###delay repeat by x secconds
     bl = 0

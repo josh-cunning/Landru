@@ -11,9 +11,9 @@ import spicemanip
 moduledir = os.path.dirname(__file__)
 shareddir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(shareddir)
-import ramchips import
-import landrushared import
-import latinum import
+import ramchips
+import landrushared
+import latinum
 
 
 @sopel.module.commands("ram")
