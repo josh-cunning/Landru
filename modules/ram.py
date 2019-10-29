@@ -28,7 +28,7 @@ def moarram(bot, trigger):
     nick = trigger.nick
     if not coms:
         amount = 1
-        result = makeram(bot,nick)
+        result = ramchips.makeram(bot,nick)
         if not result == '0':
             bot.say(nick + " gets " + str(amount) + " ramchips" )
         else:
@@ -38,14 +38,14 @@ def moarram(bot, trigger):
         if coms == 'add':
             if bot.channels[trigger.sender].privileges[bot.nick] < HALFOP:
                 return bot.reply("I'm not a channel operator!")
-            target =  spicemanip.main(triggerargsarray,2) or 0
+            target = spicemanip.main(triggerargsarray,2) or 0
             amount = spicemanip.main(triggerargsarray,3)
             if not target == 0:
                 nick = target
             if not is_digit(amount):
                 amount =  1
             amount = int(amount)
-            addram(bot,nick,amount)
+            ramchips.addram(bot,nick,amount)
             if int(amount) > 0:
                 key = " gets "
             else:
@@ -55,31 +55,31 @@ def moarram(bot, trigger):
 
         elif coms == 'balance':
             bl = 0
-            bl = getbalanceram(bot,nick)
+            bl = ramchips.getbalanceram(bot,nick)
             bot.say(nick + " has " + str(bl) + " RAM chips")
 
         elif coms == 'stock':
-            bl = getbalanceram(bot, 'botstock')
+            bl = ramchips.getbalanceram(bot, 'botstock')
             bot.say("The center warehouse has " + str(bl) + " RAM chips")
-            payout = sellram(bot)
+            payout = ramchips.sellram(bot)
             bot.say("Ram is currently selling for " + str(payout))
 
         elif coms =='ramhouse':
             amount = spicemanip.main(triggerargsarray,2)
             if not is_digit(amount):
                 amount =  1
-            addram(bot,'botstock',amount)
+            ramchips.addram(bot,'botstock',amount)
             bot.say("Bot stock gets: " + amount + " RAM chips")
 
         elif coms == 'sell':
             payout = sellram(bot)
-            sale = getbalanceram(bot,nick)
+            sale = ramchips.getbalanceram(bot,nick)
             if sale > 0:
                 payment = sale * payout
-                addlat(bot, nick, payment)
+                latinum.addlat(bot, nick, payment)
                 bot.say(nick + " sells " + str(sale) + " for " + str(payment))
-                addram(bot,'botstock',sale)
-                addram(bot,nick,-abs(sale))
+                ramchips.addram(bot,'botstock',sale)
+                ramchips.addram(bot,nick,-abs(sale))
             else:
                 bot.say(nick + " does not have chips to sell")
 
@@ -87,12 +87,12 @@ def moarram(bot, trigger):
             amount = spicemanip.main(triggerargsarray,2)
             if not is_digit(amount):
                 amount =  1
-            if addrambot(bot,nick,amount):
+            if ramchips.addrambot(bot,nick,amount):
                 key = " buys "
                 bot.say(nick + key + " worker bots")
 
         elif coms == 'supplies':
-            purchase = buysupplies(bot,nick)
+            purchase = ramchips.buysupplies(bot,nick)
             if purchase == '0':
                 bot.say(" You have filled your supplies")
             else:
