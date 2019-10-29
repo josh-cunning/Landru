@@ -29,7 +29,7 @@ def moarram(bot, trigger):
     if not coms:
         amount = 1
         result = ramchips.makeram(bot,nick)
-        if not result == '0':
+        if result == '0':
             bot.say(nick + " gets " + str(amount) + " ramchips" )
         else:
             bot.say(str(result))
@@ -72,7 +72,7 @@ def moarram(bot, trigger):
             bot.say("Bot stock gets: " + amount + " RAM chips")
 
         elif coms == 'sell':
-            payout = sellram(bot)
+            payout = ramchips.sellram(bot)
             sale = ramchips.getbalanceram(bot,nick)
             if sale > 0:
                 payment = sale * payout
