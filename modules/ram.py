@@ -29,10 +29,10 @@ def moarram(bot, trigger):
     if not coms:
         amount = 1
         result = makeram(bot,nick)
-        if not result == '0'
+        if not result == '0':
             bot.say(nick + " gets " + str(amount) + " ramchips" )
         else:
-             bot.say(str(result))
+            bot.say(str(result))
     else:
 
         if coms == 'add':
@@ -126,4 +126,4 @@ def moarram(bot, trigger):
 
 
         else:
-            bot.say("Get your own ram")
+            bot.say("I don't know what your trying to do. Type !ram help for help")
