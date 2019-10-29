@@ -35,11 +35,7 @@ def makeram(bot,nick):
         result = "You don't have enough supplies to make a chip"
         return result
     else:
-        latinum.addlat(bot,nick,-abs(cost))
-        bl = bot.db.get_nick_value(nick, 'rambank') or 0
-        bl = int(bl)
-        bl = bl + amount
-        bot.db.set_nick_value(nick,'rambank',bl)
+        addsupplies(bot,nick,-abs(amount))
     return result
 
 def addram(bot,nick,amount):
@@ -123,6 +119,18 @@ def supplybalance(bot, nick):
 
     bl = bot.db.get_nick_value(nick, 'supplies') or 0
     return bl
+
+def addsupply(bot,nick,amount)
+    bl = 0
+    if not is_digit(amount):
+        amount = 1
+    amount = int(amount)
+    bl = supplybalance(bot,nick)
+    bl = int(bl)
+    bl = amount
+    if bl<0:
+        bl = 0
+    bot.db.set_nick_value(nick,'supplies',bl)
 
 def buysupplies(bot,nick):
     supplestock = supplybalance(bot,nick)
