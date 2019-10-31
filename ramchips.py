@@ -10,6 +10,9 @@ import os
 import sys
 import spicemanip
 
+moduledir = os.path.dirname(__file__)
+shareddir = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(shareddir)
 
 import landrushared
 import latinum
@@ -130,6 +133,7 @@ def addsupply(bot,nick,amount):
     bot.db.set_nick_value(nick,'supplies',bl)
 
 def buysupplies(bot,nick,saleprice):
+    cost = 0
     supplestock = supplybalance(bot,nick)
     cash = latinum.getbalancelat(bot,nick)
     lvl = getbotlvl(bot,nick)
@@ -138,9 +142,10 @@ def buysupplies(bot,nick,saleprice):
         supplystorage = 50
     else:
         supplystorage = 100
-
+    buying = supplystorage - supplestock
+    cost = buying * salesprice
     if cash < cost :
         return 'Not enough cash'
     bot.db.set_nick_value(nick, 'supplies',supplystorage)
     latinum.addlat(bot,nick,-(cost))
-    return '0'
+    return cost
