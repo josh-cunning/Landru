@@ -37,9 +37,9 @@ def moarram(bot, trigger):
 
         if coms == 'add':
             if bot.channels[trigger.sender].privileges[nick] < sopel.module.HALFOP:
-                return bot.reply("I'm not a channel operator!")
-            target = spicemanip.main(triggerargsarray,2) or 0
-            amount = spicemanip.main(triggerargsarray,3)
+                return bot.reply("You are not a channel operator!")
+            target = spicemanip.main(triggerargsarray,3) or 0
+            amount = spicemanip.main(triggerargsarray,2)
             if not target == 0:
                 nick = target
             if not landrushared.is_digit(amount):
