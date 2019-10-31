@@ -40,6 +40,9 @@ def makeram(bot,nick):
         result = "You don't have enough supplies to make a chip"
         return result
     else:
+        rams = getbalanceram(bot,nick)
+        ramtot = rams + amount
+        bl = bot.db.set_nick_value(nick, 'rambank', ramtot)
         addsupply(bot,nick,-abs(amount))
     return result
 
