@@ -103,8 +103,8 @@ def moarram(bot, trigger):
                         bot.say(" You have filled your supplies")
                     else:
                         bot.say(purchase)
-            else:
-                bot.say(" You already have: " + str(bl) + " supplies")
+                else:
+                    bot.say(" You already have: " + str(bl) + " supplies")
 
 
 
