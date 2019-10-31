@@ -94,7 +94,7 @@ def moarram(bot, trigger):
         elif coms == 'supplies':
             bl = ramchips.supplybalance(bot, nick)
             action = spicemanip.main(triggerargsarray,2)
-            if not action == buy:
+            if not action == 'buy':
                 bot.say(" You have: " + str(bl) + " supplies. Use !ram supplies buy to get more")
             else:
                 if (bl <=0 and action == 'buy'):
