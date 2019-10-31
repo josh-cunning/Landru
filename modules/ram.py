@@ -36,7 +36,7 @@ def moarram(bot, trigger):
     else:
 
         if coms == 'add':
-            if bot.channels[trigger.sender].privileges[bot.nick] < sopel.module.HALFOP:
+            if bot.channels[trigger.sender].privileges[nick] < sopel.module.HALFOP:
                 return bot.reply("I'm not a channel operator!")
             target = spicemanip.main(triggerargsarray,2) or 0
             amount = spicemanip.main(triggerargsarray,3)
