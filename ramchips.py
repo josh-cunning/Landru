@@ -132,7 +132,7 @@ def addsupply(bot,nick,amount):
     bl = bl + amount
     bot.db.set_nick_value(nick,'supplies',bl)
 
-def buysupplies(bot,nick,saleprice):
+def buysupplies(bot,nick,salesprice):
     cost = 0
     supplestock = supplybalance(bot,nick)
     cash = latinum.getbalancelat(bot,nick)
