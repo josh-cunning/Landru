@@ -112,10 +112,7 @@ def getbotlvl(bot,nick):
 
 ##### Supplies
 
-def supplyprice(bot):
-    # random change to sell stockpile at some points
-    bl = bot.db.get_nick_value('botstock', 'supplyprice') or 1
-    return bl
+
 
 def supplybalance(bot, nick):
 
@@ -129,14 +126,13 @@ def addsupply(bot,nick,amount):
     amount = int(amount)
     bl = supplybalance(bot,nick)
     bl = int(bl)
-    bl = bl + amount    
+    bl = bl + amount
     bot.db.set_nick_value(nick,'supplies',bl)
 
-def buysupplies(bot,nick):
+def buysupplies(bot,nick,saleprice):
     supplestock = supplybalance(bot,nick)
     cash = latinum.getbalancelat(bot,nick)
     lvl = getbotlvl(bot,nick)
-    saleprice = supplyprice(bot)
     cost = (supplestock * saleprice)
 
     if lvl == 1:

@@ -88,19 +88,25 @@ def moarram(bot, trigger):
             if not landrushared.is_digit(amount):
                 amount =  1
             if ramchips.addrambot(bot,nick,amount):
-                key = " buys "
-                bot.say(nick + key + " worker bots")
+                if amount = 1:
+                    key = " buys a worker bot "
+                else:
+                    key = " buys " + str(amount) + " worker bots "
+                bot.say(nick + key)
 
         elif coms == 'supplies':
             bl = ramchips.supplybalance(bot, nick)
             action = spicemanip.main(triggerargsarray,2)
+            pricing = landrushared.randprice(50)
+            bot.say(str(action))
             if not action == 'buy':
-                bot.say(" You have: " + str(bl) + " supplies. Use !ram supplies buy to get more")
+                bot.say(" You have: " + str(bl) + " supplies. supplies currently cost: " + str(pricing))
             else:
-                if (bl <=0 and action == 'buy'):
-                    purchase = ramchips.buysupplies(bot,nick)
+                if  (action == 'buy'):
+                    purchase = ramchips.buysupplies(bot,nick,pricing)
+                     
                     if purchase == '0':
-                        bot.say(" You have filled your supplies")
+                        bot.say(" You have filled your supplies to: "  +  str(bl) + " for " + str(pricing))
                     else:
                         bot.say(purchase)
                 else:

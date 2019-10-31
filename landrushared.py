@@ -14,3 +14,9 @@ def is_digit(n):
         return True
     except ValueError:
         return  False
+
+def randprice(max):
+    if max < 1:
+        max = 5
+    price = txt = random.randint(0, max)
+    return price
