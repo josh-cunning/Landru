@@ -10,9 +10,7 @@ import os
 import sys
 import spicemanip
 
-moduledir = os.path.dirname(__file__)
-shareddir = os.path.dirname(os.path.dirname(__file__))
-sys.path.append(shareddir)
+
 import landrushared
 import latinum
 
@@ -131,9 +129,7 @@ def addsupply(bot,nick,amount):
     amount = int(amount)
     bl = supplybalance(bot,nick)
     bl = int(bl)
-    bl = amount
-    if bl<0:
-        bl = 0
+    bl = bl + amount    
     bot.db.set_nick_value(nick,'supplies',bl)
 
 def buysupplies(bot,nick):
