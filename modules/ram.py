@@ -98,7 +98,7 @@ def moarram(bot, trigger):
             bl = ramchips.supplybalance(bot, nick)
             action = spicemanip.main(triggerargsarray,2)
             pricing = landrushared.randprice(50)
-            bot.say(str(action))
+            
             if not action == 'buy':
                 bot.say(" You have: " + str(bl) + " supplies. supplies currently cost: " + str(pricing))
             else:

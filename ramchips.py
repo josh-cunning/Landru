@@ -133,12 +133,12 @@ def buysupplies(bot,nick,saleprice):
     supplestock = supplybalance(bot,nick)
     cash = latinum.getbalancelat(bot,nick)
     lvl = getbotlvl(bot,nick)
-    cost = (supplestock * saleprice)
 
     if lvl == 1:
         supplystorage = 50
     else:
         supplystorage = 100
+
     if cash < cost :
         return 'Not enough cash'
     bot.db.set_nick_value(nick, 'supplies',supplystorage)
