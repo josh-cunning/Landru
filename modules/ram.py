@@ -88,7 +88,7 @@ def moarram(bot, trigger):
             if not landrushared.is_digit(amount):
                 amount =  1
             if ramchips.addrambot(bot,nick,amount):
-                if amount = 1:
+                if amount == 1:
                     key = " buys a worker bot "
                 else:
                     key = " buys " + str(amount) + " worker bots "
@@ -104,7 +104,7 @@ def moarram(bot, trigger):
             else:
                 if  (action == 'buy'):
                     purchase = ramchips.buysupplies(bot,nick,pricing)
-                     
+
                     if purchase == '0':
                         bot.say(" You have filled your supplies to: "  +  str(bl) + " for " + str(pricing))
                     else:
