@@ -59,7 +59,7 @@ def moarram(bot, trigger):
             if not target:
                 target = nick
             bl = ramchips.getbalanceram(bot,target)
-            bot.say(nick + " has " + str(bl) + " RAM chips")
+            bot.say(target: + " has " + str(bl) + " RAM chips")
 
         elif coms == 'stock':
             bl = ramchips.getbalanceram(bot, 'botstock')
