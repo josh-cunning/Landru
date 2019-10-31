@@ -36,7 +36,7 @@ def moarram(bot, trigger):
     else:
 
         if coms == 'add':
-            if bot.channels[trigger.sender].privileges[bot.nick] < HALFOP:
+            if bot.channels[trigger.sender].privileges[bot.nick] < sopel.module.HALFOP:
                 return bot.reply("I'm not a channel operator!")
             target = spicemanip.main(triggerargsarray,2) or 0
             amount = spicemanip.main(triggerargsarray,3)
@@ -106,7 +106,7 @@ def moarram(bot, trigger):
                     purchase = ramchips.buysupplies(bot,nick,pricing)
 
                     if not purchase == 0:
-                        bot.say(" You have filled your supplies to: "  +  str(bl) + " for " + str(purchase))
+                        bot.say(" You have refilled your supplies for " + str(purchase) + " bars of latinum")
                     else:
                         bot.says(str(purchase))
                 else:
