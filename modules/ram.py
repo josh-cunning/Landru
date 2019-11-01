@@ -55,10 +55,11 @@ def moarram(bot, trigger):
 
         elif coms == 'go':
             #bl = 0
-            target = spicemanip.main(triggerargsarray,3) or 0
+            one = spicemanip.main(triggerargsarray,2+)
             amount = spicemanip.main(triggerargsarray,2)
-            one = spicemanip.main(triggerargsarray,1)
+            target = spicemanip.main(triggerargsarray,3)
             some = spicemanip.main(triggerargsarray,4)
+
             bot.say(str(target) + ' ' + str(amount) + " " + str(one) + " " + str(some))
             #if not target == 0:
                 #nick = target
