@@ -55,10 +55,10 @@ def moarram(bot, trigger):
 
         elif coms == 'balance':
             bl = 0
-            target = spicemanip.main(triggerargsarray,2)
+            target = spicemanip.main(triggerargsarray,2) or 0
             bot.say(target)
-            if not target:
-                target = nick
+            if not target == 0:
+                nick = target
             bot.say(target)
             bl = ramchips.getbalanceram(bot,target)
             bot.say(target + " has " + str(bl) + " RAM chips")
