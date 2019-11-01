@@ -55,8 +55,8 @@ def moarram(bot, trigger):
 
         elif coms == 'balance':
             #bl = 0
-            target = spicemanip.main(triggerargsarray,2) or 0
-            amount = spicemanip.main(triggerargsarray,3)
+            target = spicemanip.main(triggerargsarray,3) or 0
+            amount = spicemanip.main(triggerargsarray,2)
             bot.say(str(target) + ' ' + str(amount))
             if not target == 0:
                 nick = target
