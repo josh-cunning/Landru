@@ -21,9 +21,13 @@ def testbot(bot, trigger):
 
     if one == 'one':
         bot.say("Number One")
-    elif one == 2:
+        if two == 'two':
+            bot.say("Two for One")
+        elif two == 'three':
+            bot.say("Three for one")
+    elif one == 'two':
         bot.say('Number Two')
-    elif one  == 3:
+    elif one  == 'three':
         bot.say('Number Three')
-    elif one == 4:
+    elif one == 'four':
         bot.say('Number Four')
