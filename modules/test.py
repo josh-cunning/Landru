@@ -31,3 +31,5 @@ def testbot(bot, trigger):
         bot.say('Number Three')
     elif one == 'four':
         bot.say('Number Four')
+    else:
+        bot.say(str(one) + ' ' + str(two) + " " + str(three) + " " + str(four))
