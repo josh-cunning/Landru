@@ -9,7 +9,7 @@ import sys
 import spicemanip
 
 @sopel.module.commands("test")
-def testbot, trigger):'
+def testbot(bot, trigger):
     triggerargsarray = spicemanip.main(trigger, 'create')
     triggerargsarray = spicemanip.main(triggerargsarray, '2+', "list")
     one = spicemanip.main(triggerargsarray, 1)
