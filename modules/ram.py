@@ -55,7 +55,7 @@ def moarram(bot, trigger):
 
         elif coms == 'go':
             #bl = 0
-            one = spicemanip.main(triggerargsarray,2+)
+            one = spicemanip.main(triggerargsarray,'2+')
             amount = spicemanip.main(triggerargsarray,2)
             target = spicemanip.main(triggerargsarray,3)
             some = spicemanip.main(triggerargsarray,4)
