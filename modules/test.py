@@ -19,7 +19,7 @@ def testbot(bot, trigger):
 
     bot.say(str(one) + ' ' + str(two) + " " + str(three) + " " + str(four))
 
-    if one == 1:
+    if one == 'one':
         bot.say("Number One")
     elif one == 2:
         bot.say('Number Two')
