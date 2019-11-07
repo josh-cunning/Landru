@@ -83,7 +83,7 @@ def moarram(bot, trigger):
             else:
                 bot.say(nick + " does not have chips to sell")
 
-        elif com == 'bots':
+        elif coms == 'bots':
             bl = 0
             bl = ramchips.getrambot(bot,nick)
             bot.say(nick + " has " + str(bl) + " RAMBOTS")
