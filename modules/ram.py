@@ -53,19 +53,10 @@ def moarram(bot, trigger):
             amount = abs(amount)
             bot.say(nick + key + str(amount) + " ramchips" )
 
-        elif coms == 'go':
-            #bl = 0
-            one = spicemanip.main(triggerargsarray, 1)
-            amount = spicemanip.main(triggerargsarray,2)
-            target = spicemanip.main(triggerargsarray,3)
-            some = spicemanip.main(triggerargsarray,4)
-
-            bot.say(str(target) + ' ' + str(amount) + " " + str(one) + " " + str(some))
-            #if not target == 0:
-                #nick = target
-            #bot.say(str(nick))
-            #bl = ramchips.getbalanceram(bot,nick)
-            #bot.say(nick + " has " + str(bl) + " RAM chips")
+        elif coms == 'balance':
+            bl = 0
+            bl = ramchips.getbalanceram(bot,nick)
+            bot.say(nick + " has " + str(bl) + " RAM chips")
 
         elif coms == 'stock':
             bl = ramchips.getbalanceram(bot, 'botstock')
