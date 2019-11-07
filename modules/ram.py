@@ -83,6 +83,11 @@ def moarram(bot, trigger):
             else:
                 bot.say(nick + " does not have chips to sell")
 
+        elif com == 'bots':
+            bl = 0
+            bl = ramchips.getrambot(bot,nick)
+            bot.say(nick + " has " + str(bl) + " RAMBOTS")
+
         elif coms == 'buybot':
             amount = spicemanip.main(triggerargsarray,2)
             if not landrushared.is_digit(amount):
