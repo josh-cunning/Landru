@@ -99,7 +99,7 @@ def moarram(bot, trigger):
                     key = " buys " + str(amount) + " worker bots "
                 bot.say(nick + key)
 
-        elif coms == "setbots":
+        elif coms == 'setbots':
             if bot.channels[trigger.sender].privileges[nick] < sopel.module.HALFOP:
                 return bot.reply("You are not a channel operator!")
             target = spicemanip.main(triggerargsarray,3) or 0
