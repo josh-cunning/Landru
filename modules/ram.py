@@ -99,6 +99,24 @@ def moarram(bot, trigger):
                     key = " buys " + str(amount) + " worker bots "
                 bot.say(nick + key)
 
+        elif coms == "setbots":
+            if bot.channels[trigger.sender].privileges[nick] < sopel.module.HALFOP:
+                return bot.reply("You are not a channel operator!")
+            target = spicemanip.main(triggerargsarray,3) or 0
+            amount = spicemanip.main(triggerargsarray,2)
+            if not target == 0:
+                nick = target
+            if not landrushared.is_digit(amount):
+                amount =  1
+            amount = int(amount)
+            ramchips.addrambot(bot,nick,amount)
+            if int(amount) > 0:
+                key = " gets "
+            else:
+                key = " loses "
+            amount = abs(amount)
+            bot.say(nick + key + str(amount) + " rambots" )
+
         elif coms == 'supplies':
             bl = ramchips.supplybalance(bot, nick)
             action = spicemanip.main(triggerargsarray,2)
