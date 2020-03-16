@@ -105,7 +105,7 @@ def moarram(bot, trigger):
             pricing = landrushared.randprice(50)
 
             if not action == 'buy':
-                bot.say(" You have: " + str(bl) + " supplies. supplies currently cost: " + str(pricing))
+                bot.say(" You have: " + str(bl) + " supplies. One RAMCHIP currently cost: " + str(pricing))
             else:
                 if  (action == 'buy'):
                     purchase = ramchips.buysupplies(bot,nick,pricing)
@@ -116,6 +116,9 @@ def moarram(bot, trigger):
                         bot.says(str(purchase))
                 else:
                     bot.say(" You already have: " + str(bl) + " supplies")
+
+        elif coms == 'upgrades':
+            bot.say("No upgrades for you")
 
 
 
