@@ -6,6 +6,8 @@ import operator
 import sopel.module
 import operator
 import sopel.module
+import os
+import sys
 
 
 def is_digit(n):
@@ -27,15 +29,14 @@ def randprice(max):
 """
 
 
+
+def restart(bot, trigger):
+    bot.say(bot.nick + "Is Restarting the " + targetbot + " Service...")
+    os.system("systemctl restart sopel.service")
+    #bot.say( 'say', "If you see this, the service is hanging. Making another attempt.")
+    #bot.say("sudo service " + str(targetbot) + " restart")
+
 """
-def restart(bot, botcom, trigger, targetbot):
-    bot.say('action', "Is Restarting the " + targetbot + " Service...")
-    os.system("sudo service " + str(targetbot) + " restart")
-    if bot.nick == targetbot:
-        bot.say( 'say', "If you see this, the service is hanging. Making another attempt.")
-        bot.say("sudo service " + str(targetbot) + " restart")
-
-
 def update(bot, botcom, trigger, targetbot):
     # os.system("sudo chown -R spicebot:sudo /home/spicebot/.sopel/")
     joindpath = os.path.join("/home/spicebot/.sopel/", targetbot)
