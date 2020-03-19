@@ -16,6 +16,7 @@ from sopel.tools.calculation import eval_equation
 
 @sopel.module.commands("restart")
 def restartbot(bot, trigger):
+    nick = trigger.nick
     if bot.channels[trigger.sender].privileges[nick] < sopel.module.HALFOP:
         return bot.reply("You are not a channel operator!")
     bot.say("Restarting")
