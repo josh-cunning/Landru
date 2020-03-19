@@ -106,14 +106,8 @@ def moarram(bot, trigger):
             amount = spicemanip.main(triggerargsarray,2)
             if not target == 0:
                 nick = target
-            if not landrushared.is_digit(amount):
-                amount =  1
-            amount = int(amount)
-            ramchips.addrambot(bot,nick,amount)
-            if int(amount) > 0:
-                key = " gets "
-            else:
-                key = " loses "
+            ramchips.setrambot(bot,nick,amount)
+            key = " now has: "
             amount = abs(amount)
             bot.say(nick + key + str(amount) + " rambots" )
 
