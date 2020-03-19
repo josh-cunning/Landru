@@ -106,7 +106,7 @@ def moarram(bot, trigger):
             amount = spicemanip.main(triggerargsarray,2)
             if not target == 0:
                 nick = target
-            ramchips.setrambot(bot,nick,amount)
+            ramchips.setrambots(bot,nick,amount)
             key = " now has: "
             amount = abs(amount)
             bot.say(nick + key + str(amount) + " rambots" )
