@@ -18,7 +18,7 @@ def testbot(bot, trigger):
     four = spicemanip.main(triggerargsarray,4)
 
     #bot.say(str(one) + ' ' + str(two) + " " + str(three) + " " + str(four))
-
+    bot.say("Testing")
     if one == 'one':
         bot.say("Number One")
         if two == 'two':
@@ -32,6 +32,6 @@ def testbot(bot, trigger):
     elif one == 'four':
         bot.say('Number Four')
 
-        
+
     else:
         bot.say(str(one) + ' ' + str(two) + " " + str(three) + " " + str(four))

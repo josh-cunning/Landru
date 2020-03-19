@@ -20,3 +20,26 @@ def randprice(max):
         max = 5
     price = txt = random.randint(0, max)
     return price
+
+
+"""
+# Bot Restart/Update
+"""
+
+
+"""
+def restart(bot, botcom, trigger, targetbot):
+    bot.say('action', "Is Restarting the " + targetbot + " Service...")
+    os.system("sudo service " + str(targetbot) + " restart")
+    if bot.nick == targetbot:
+        bot.say( 'say', "If you see this, the service is hanging. Making another attempt.")
+        bot.say("sudo service " + str(targetbot) + " restart")
+
+
+def update(bot, botcom, trigger, targetbot):
+    # os.system("sudo chown -R spicebot:sudo /home/spicebot/.sopel/")
+    joindpath = os.path.join("/home/spicebot/.sopel/", targetbot)
+    osd(bot, botcom.channel_current, 'action', "Is Pulling " + str(joindpath) + " From Github...")
+    g = git.cmd.Git(joindpath)
+    g.pull()
+    """
