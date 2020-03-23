@@ -40,7 +40,7 @@ def moarlat(bot, trigger):
                 amount =  1
             if not target == 0:
                 nick = target
-            latinums.setlats(bot,nick,amount)
+             latinum.setlats(bot,nick,amount)
             key = " now has: "
             #amount = abs(amount)
             bot.say(nick + key + str(amount) + " latinum bars" )
