@@ -83,7 +83,7 @@ def ramstock(bot):
 def setrambots(bot,nick,amount):
     if not landrushared.is_digit(amount):
         amount = 1
-    bot.db.set_nick_value(nick,'rambots',amount)
+    bot.db.set_nick_value(nick,' rambots ',amount)
 
 
 def getrambot(bot,nick):

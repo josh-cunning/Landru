@@ -37,7 +37,7 @@ def moarram(bot, trigger):
 
         if coms == 'add':
             if bot.channels[trigger.sender].privileges[nick] < sopel.module.HALFOP:
-                return bot.reply("You are not a channel operator!")
+                return bot.reply("Unauthorized action detected!")
             target = spicemanip.main(triggerargsarray,3) or 0
             amount = spicemanip.main(triggerargsarray,2)
             if not target == 0:
@@ -101,7 +101,7 @@ def moarram(bot, trigger):
 
         elif coms == 'setbots':
             if bot.channels[trigger.sender].privileges[nick] < sopel.module.HALFOP:
-                return bot.reply("You are not a channel operator!")
+                return bot.reply("Unauthorized action detected!")
             target = spicemanip.main(triggerargsarray,3) or 0
             amount = spicemanip.main(triggerargsarray,2)
             if not landrushared.is_digit(amount):

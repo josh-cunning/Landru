@@ -29,3 +29,8 @@ def addlat(bot,nick,amount):
     if bl<0:
         bl =0
     bot.db.set_nick_value(nick,'latbank',bl)
+
+def setlats(bot,nick,amount):
+    if not landrushared.is_digit(amount):
+        amount = 1
+    bot.db.set_nick_value(nick,'latbank' ,amount)
