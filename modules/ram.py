@@ -104,11 +104,13 @@ def moarram(bot, trigger):
                 return bot.reply("You are not a channel operator!")
             target = spicemanip.main(triggerargsarray,3) or 0
             amount = spicemanip.main(triggerargsarray,2)
+            if not landrushared.is_digit(amount):
+                amount =  1
             if not target == 0:
                 nick = target
             ramchips.setrambots(bot,nick,amount)
             key = " now has: "
-            amount = abs(amount)
+            #amount = abs(amount)
             bot.say(nick + key + str(amount) + " rambots" )
 
         elif coms == 'supplies':
