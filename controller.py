@@ -14,6 +14,10 @@ import sopel.module
 from sopel.tools.calculation import eval_equation
 
 
+moduledir = os.path.dirname(__file__)
+shareddir = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(shareddir)
+
 @sopel.module.commands("restart")
 def restartbot(bot, trigger):
     bot.say("restartbot")
