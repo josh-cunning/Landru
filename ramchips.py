@@ -100,8 +100,10 @@ def addrambot(bot, nick, amount):
         amount = 1
     totalbots = 0
     totalbots = bot.db.get_nick_value(nick, 'rambots') or 0
+    warehousestock = ramstock(bot)
+    cost = (warehousestock * amount) + totalbots
     cash =  latinum.getbalancelat(bot,nick)
-    costbot = int(totalbots) + int(amount)
+
     if costbot <= cash:
         bl = totalbots + amount
         bot.db.set_nick_value(nick,'rambots',bl)

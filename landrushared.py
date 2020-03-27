@@ -32,7 +32,7 @@ def randprice(max):
 
 def restart(bot, trigger):
     bot.say(bot.nick + "Is Restarting the " + bot.nick + " Service...")
-    os.system("systemctl stop sopel.service")
+    os.system("sudo systemctl stop sopel.service")
     #bot.say( 'say', "If you see this, the service is hanging. Making another attempt.")
     #bot.say("sudo service " + str(targetbot) + " restart")
 
